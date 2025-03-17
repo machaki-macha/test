@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Hyperlink to The Name in Lightning Datatable"><br/>
+         <div if:true={oppData}>
+            <lightning-datatable data={oppData} 
+                                 columns={columns} 
+                                 key-field="Id"
+                                 hide-checkbox-column="true"></lightning-datatable>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,30 @@
+<apex:page controller="OpportunityController2">
+<!--<apex:page standardController="Opportunity" extensions="OpportunityController2">-->
+    <script>
+        var searchKey = 'Edge';
+        var opportunities = '';
+
+        function getOpportunities(){
+            actionTest();
+            return false;
+        }
+
+    </script>
+    <apex:pageBlock >
+        <apex:form id="formId">
+            <apex:actionFunction name="actionTest" action="{!getOpportunity2}" reRender="pageBlockTableId,formId"/>
+            <apex:inputText label="インプット" value="{!searchKey}"/>
+            <apex:commandButton value="ボタン" onclick="return getOpportunities();" />
+        </apex:form>
+        <apex:pageBlockTable value="{!opportunityList}" var="opp" id="pageBlockTableId" >
+            <apex:column >
+                <apex:facet name="header">ID</apex:facet>
+                {!opp.id}
+            </apex:column>
+            <apex:column >
+                <apex:facet name="header">名前</apex:facet>
+                {!opp.name}
+            </apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

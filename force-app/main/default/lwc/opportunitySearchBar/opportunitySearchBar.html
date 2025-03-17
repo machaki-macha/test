@@ -1,0 +1,40 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card title="商談検索" icon-name="custom:custom1">
+
+        <lightning-textarea></lightning-textarea>
+
+
+        <div class="slds-m-around_medium">
+            <lightning-layout vertical-align="end">
+                <lightning-layout-item flexibility="auto">
+                    <lightning-input
+                    type="search"
+                    onchange={handleChange}
+                    label="商談名"
+                    ></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-p-left_xx-small">
+                    <lightning-button
+                    label="検索"
+                    onclick={opportunitySearch}
+                    ></lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+            <!--<template if:true={opportunities}>
+                <template for:each={opportunities} for:item="opportunity">
+                    <p key={opportunity.Id}>
+                        <lightning-formatted-url label={opportunity.Name} value={opportunity.oppName} target="_blank">                        </lightning-formatted-url>
+                        {opportunity.Amount}
+                    </p>
+                </template>
+            </template>-->
+        </div>
+    </lightning-card>
+    <lightning-datatable
+        data={opportunities}
+        columns={columns}
+        key-field="Id">
+    </lightning-datatable>
+    <lightning-input label="test" value={test1}></lightning-input>
+</template>

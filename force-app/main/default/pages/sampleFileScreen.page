@@ -1,0 +1,74 @@
+<apex:page id="page" showHeader="false" sidebar="false" controller="sampleFileScreenController">
+
+    <script>
+        function showfile(file, inputfileName){
+        
+            var fname = document.getElementById(inputfileName);
+
+            if (file.files[0]==null) {
+                alert('ファイルが空')
+                fname.innerHTML="";
+            }
+            
+            var reader = new FileReader();
+            reader.onload = function(event) {
+                    var last = file.files[0].lastModifiedDate
+             　　   alert('FileReader.onload')
+                    fname.innerHTML='name:' + file.files[0].name
+                                   + '<br>lastModified :' + last
+                                   + '<br>lastModifieddate :' + last.getFullYear()
+                                   + '<br>size :' + file.files[0].size
+                                   + '<br>type:' + file.files[0].type;
+            }
+            reader.readAsDataURL(file.files[0]);
+
+        }
+    </script>
+
+    <apex:form >
+        <div id="fileUpdateArea" style="padding:10px;" >
+            <apex:actionRegion >
+                <table width="100%">
+                    <tbody>
+                        <tr style="border: 3px solid rgb(221, 219, 218);
+                                    border-top:0px;
+                                    border-bottom:0px;">
+                            <td width="50%" style="padding:5px;" align="right" >
+                                <table>
+                                    <tr>
+                                        <td width="20%" style="text-align:  center;text-align:-webkit-center;">
+                                            <apex:inputFile id="inputfile" 
+                                            styleclass="slds-file-selector__input slds-assistive-text"
+                                            style="font-size: 18px;"
+                                            value=""
+                                            accept="image/png, image/jpeg, image/gif"
+                                            onchange="showfile(this, 'inputfileName1')"/>
+                                            <label class="slds-file-selector__body" for="{!$Component.inputfile1}" id="file-selector-secondary-label1">
+                                                <span class="slds-file-selector__button slds-button slds-button_neutral" style="white-space: nowrap;">
+                                                    ファイルを選択
+                                                </span>
+                                            </label>
+                                            <br/><span class="err_span" id="inputfile1Msg"/>
+                                        </td>
+                                        <td style="text-align:  center;text-align:-webkit-center;">
+                                            <p id="inputfileName1"/>
+                                            <span class="slds-file-selector__button slds-button slds-button_neutral" style="white-space: nowrap;">
+                                                    ファイル名を表示する予定の場所
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </table>
+                                
+                                
+                            </td>
+                            <td width="0px;" style="text-align:  center;text-align:-webkit-center;" >
+                                <canvas id="canvas1" width="300" height="260" style="display:none;"/>
+                            </td>
+                            
+                        </tr>
+                    </tbody>
+                </table>
+            </apex:actionRegion>
+        </div>
+   </apex:form>
+</apex:page>

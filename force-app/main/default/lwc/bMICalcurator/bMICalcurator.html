@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="BMI Calcurator" icon-name="custom:custom19">
+        <div class="slds-m-around_medium">
+            <lightning-input label="身長(cm)" step="0.1" onchange={heightChange}></lightning-input>
+            <p>{height}</p>
+            <lightning-input label="体重(kg)" step="0.1" onchange={weightChange}></lightning-input>
+            <p>{weight}</p>
+            <p>
+                <lightning-button label="計算" onclick={calcurate}></lightning-button>
+            </p>
+            <p>bmi</p>
+            <lightning-formatted-number
+            value={bmi}
+            ></lightning-formatted-number>
+        </div>
+    </lightning-card>
+</template>

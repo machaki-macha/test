@@ -1,0 +1,30 @@
+<apex:page standardController="Account" extensions="ActionFunctionVerificationController">
+    <apex:form id="form">
+        <apex:actionFunction name="doClickBtn" action="{!doClick}" rerender="form"/>
+        <apex:pageBlock >
+            <apex:pageMessages />
+            <apex:pageBlockButtons location="top">
+                <!-- onClick returnを先に追加したらlogにapexが一つしか起動されない。理由が分からない。
+                吉本さんに後で聞く。 -->
+                <apex:commandButton value="  TypeA  " onClick="onClickBtnTypeA();" />
+                <apex:commandButton value="  TypeB  " onClick="return onClickBtnTypeB();" />
+                <apex:commandButton ></apex:commandButton>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection >
+                <apex:inputField value="{!account.Name}" />
+            </apex:pageBlockSection>
+        </apex:pageblock>
+        <script>
+            function onClickBtnTypeA() {
+                if(confirm("よろしいですか？")){
+                    doClickBtn();
+                }
+                return false;
+            }
+            function onClickBtnTypeB() {
+                if(confirm("よろしいですか？")) doClickBtn();
+                return false;
+            }
+        </script>
+    </apex:form>
+</apex:page>
