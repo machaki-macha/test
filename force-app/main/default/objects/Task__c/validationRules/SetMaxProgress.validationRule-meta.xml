@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SetMaxProgress</fullName>
+    <active>true</active>
+    <errorConditionFormula>Progress__c  &gt; 1</errorConditionFormula>
+    <errorDisplayField>Progress__c</errorDisplayField>
+    <errorMessage>0～100で入力してください。</errorMessage>
+</ValidationRule>

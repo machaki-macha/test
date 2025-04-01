@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <externalId>false</externalId>
+    <label>状況</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>新規</fullName>
+                <default>true</default>
+                <label>新規</label>
+            </value>
+            <value>
+                <fullName>進行中</fullName>
+                <default>false</default>
+                <label>進行中</label>
+            </value>
+            <value>
+                <fullName>完了</fullName>
+                <default>false</default>
+                <label>完了</label>
+            </value>
+            <value>
+                <fullName>レビュー待ち</fullName>
+                <default>false</default>
+                <label>レビュー待ち</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
