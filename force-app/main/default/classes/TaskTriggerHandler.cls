@@ -1,7 +1,7 @@
 /*
  * TaskTriggerhandler
  * タスクオブジェクトトリガハンドラクラス
- * テスト2
+ * テスト
  */
 public class TaskTriggerHandler{
     // タスク状況項目選択肢「未着手」
