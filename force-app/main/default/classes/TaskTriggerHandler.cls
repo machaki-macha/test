@@ -19,6 +19,7 @@ public class TaskTriggerHandler{
     private static final String REVIEW_REQUEST = 'レビュー依頼';
     
    /* 
+    * てすと１
     * タスク作成前処理
     * Trigger.isBefore && Trigger.isInsert時実行処理
     * @param: newTaskList 更新後タスクレコードリスト
